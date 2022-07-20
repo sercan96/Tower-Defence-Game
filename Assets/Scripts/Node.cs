@@ -53,7 +53,6 @@ public class Node : MonoBehaviour
     public Vector3 GetBuildPosition()
     {
         return transform.position + PositionOffset;
-
     }
 
     void OnMouseExit()

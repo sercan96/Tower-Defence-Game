@@ -22,7 +22,7 @@ public class Turret : MonoBehaviour
     public string EnemyTag = "Enemy";
 
     [Header("Use Laser")] 
-    
+    public float DamageOverTime = 70f;
     public bool UseLaser = true;
 
     [HideInInspector]public ParticleSystem LaserEffect;
@@ -31,6 +31,7 @@ public class Turret : MonoBehaviour
     public Transform FirePoint;
     
     private Transform _target;
+    private Enemy _targetEnemy;
     private float _turnSpeed = 5f;
     private float _fireCountdown;
 
@@ -70,26 +71,28 @@ public class Turret : MonoBehaviour
             }
             _fireCountdown -= Time.deltaTime;
         }
-
     }
 
     private void Laser()
     {
+        _targetEnemy.TakeDamage(DamageOverTime * Time.deltaTime);
+        #region Second Way
+        // _target.GetComponent<Enemy>().TakeDamage(DamageOverTime * Time.deltaTime);
+        #endregion
+        // Update te çalıştığı için lazer her değdiğinde azar azar canını alactacaktır
+ 
         if (!LineRenderer.enabled)
         {
             LineRenderer.enabled = true;
             LightImpact.enabled = true;
             LaserEffect.Play();
-        
         }
         LineRenderer.SetPosition(0,FirePoint.position); // lazerin çıkacağı ilk pozisyon
         LineRenderer.SetPosition(1,_target.position); // lazerin çıkacağı ikinci pozisyon
-
         
         Vector3 dir = FirePoint.position - _target.position;
         LaserEffect.transform.position = _target.position;
         LaserEffect.transform.rotation = Quaternion.LookRotation(dir);
-   
     }
 
     private void Shoot()
@@ -127,6 +130,8 @@ public class Turret : MonoBehaviour
         if (nearestObj !=null && shortestDistance <= Range)
         {
             _target = nearestObj.transform;
+            _targetEnemy = _target.GetComponent<Enemy>();
+            // Update te GEtComponent yapmamızın sebebi sürekli farklı bir objeyi yakalamak istememiz.
         }
         else
         {
