@@ -271,15 +271,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 20
-  BulletPrefab: {fileID: 6885760599376194606, guid: ade4b33fd65420b4c89c8dd6a866bd2d,
-    type: 3}
-  _fireRate: 1
+  BulletPrefab: {fileID: 0}
+  FireRate: 1
   PartToRotate: {fileID: 5962551927645504644}
   EnemyTag: Enemy
+  DamageOverTime: 100
   UseLaser: 1
+  SlowPct: 0.5
   LaserEffect: {fileID: 1128251440095776432}
   LineRenderer: {fileID: 5781631711154189415}
-  LightImpact: {fileID: 4432812699093681615}
+  LightImpact: {fileID: 639880935866924438}
   FirePoint: {fileID: 9002781358182928977}
 --- !u!120 &5781631711154189415
 LineRenderer:
@@ -513,9 +514,9 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 6106857886597611959}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &4432812699093681615 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7582770179677897848, guid: d27f46eaddaec654a9d1e76f5eaf56ed,
+--- !u!1 &639880935866924438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6655962591633210401, guid: d27f46eaddaec654a9d1e76f5eaf56ed,
     type: 3}
   m_PrefabInstance: {fileID: 6106857886597611959}
   m_PrefabAsset: {fileID: 0}

@@ -356,10 +356,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405106eff3ea3744ca6da3b1297867e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BarImage: {fileID: 591280736}
+  StartSpeed: 10
   speed: 10
   Health: 100
   Value: 20
-  BarImage: {fileID: 591280736}
 --- !u!114 &-2696629336412977437
 MonoBehaviour:
   m_ObjectHideFlags: 0

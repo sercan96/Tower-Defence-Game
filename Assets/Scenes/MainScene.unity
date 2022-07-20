@@ -16669,7 +16669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartMoney: 1000
-  StartLives: 1
+  StartLives: 0
 --- !u!1001 &1237875903
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
     private Transform _target;
@@ -13,7 +14,6 @@ public class EnemyMovement : MonoBehaviour
     {
         _target = Waypoints.Points[0];
         _enemy = gameObject.GetComponent<Enemy>();
-        
     }
     
     void Update()
@@ -29,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
         {
             GetNextWaypoint();
         }
+
+        _enemy.speed = _enemy.StartSpeed; // Update ile sürekli değeri 20 yapsın. Çünkü laser değdiğinde azaldıcaz.
     }
 
     #region Command2

@@ -47,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
     {
         EnemyMat.color = Random.ColorHSV(0, 1, 0.5f, 1, 1, 1) + Color.gray;
         Instantiate(EnemyPrefab,EnemyPos.position,EnemyPos.rotation,EnemySpawnerParentObj);
+        PlayerStats.Lives++;
     }
     
 }

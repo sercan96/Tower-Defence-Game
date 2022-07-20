@@ -14,7 +14,9 @@ public class Turret : MonoBehaviour
     [Header("Use Bullets(Default)")]
     
     public GameObject BulletPrefab;
+    public Transform FirePoint;
     public float FireRate = 1;
+ 
     
     [Header("Unity Setup Fields")]
     
@@ -22,13 +24,14 @@ public class Turret : MonoBehaviour
     public string EnemyTag = "Enemy";
 
     [Header("Use Laser")] 
-    public float DamageOverTime = 70f;
+    public float DamageOverTime = 100f;
     public bool UseLaser = true;
+    public float SlowPct = .5f;
 
     [HideInInspector]public ParticleSystem LaserEffect;
     [HideInInspector] public LineRenderer LineRenderer; // referansı inspectorde gizledik.
-    [HideInInspector] public Light LightImpact;
-    public Transform FirePoint;
+    [HideInInspector] public GameObject LightImpact;
+   
     
     private Transform _target;
     private Enemy _targetEnemy;
@@ -50,7 +53,7 @@ public class Turret : MonoBehaviour
                 if (LineRenderer.enabled)
                 {
                     LineRenderer.enabled = false;
-                    LightImpact.enabled = false;
+                    LightImpact.SetActive(false);
                     LaserEffect.Stop();
                 }
             }
@@ -80,11 +83,12 @@ public class Turret : MonoBehaviour
         // _target.GetComponent<Enemy>().TakeDamage(DamageOverTime * Time.deltaTime);
         #endregion
         // Update te çalıştığı için lazer her değdiğinde azar azar canını alactacaktır
- 
+        _targetEnemy.Slow(SlowPct); // Lazer değdiği sürece hızını yavaşlat.
+
         if (!LineRenderer.enabled)
         {
             LineRenderer.enabled = true;
-            LightImpact.enabled = true;
+            LightImpact.SetActive(true);
             LaserEffect.Play();
         }
         LineRenderer.SetPosition(0,FirePoint.position); // lazerin çıkacağı ilk pozisyon
