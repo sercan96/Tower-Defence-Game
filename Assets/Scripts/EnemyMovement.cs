@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
             GetNextWaypoint();
         }
 
-        _enemy.speed = _enemy.StartSpeed; // Update ile sürekli değeri 20 yapsın. Çünkü laser değdiğinde azaldıcaz.
+        _enemy.speed = _enemy.StartSpeed; // Update ile sürekli değeri 20 yapsın. Çünkü laser değdiğinde azaltıcaz.
     }
 
     #region Command2

@@ -4,6 +4,16 @@ using UnityEngine.UI;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager Instance;
+    
+    // public GameObject StandartTurretPrefab;
+    // public GameObject PurchaseMissileLouncher;
+    
+    public GameObject BuildEffect;
+    public NodeUI NodeUı;
+    private Node _selectedNode;
+
+    
+    private TurretBluePrint _turretToBuild;
 
     void Awake()
     {
@@ -15,10 +25,8 @@ public class BuildManager : MonoBehaviour
         Instance = this;
     }
 
-    // public GameObject StandartTurretPrefab;
-    // public GameObject PurchaseMissileLouncher;
-    private TurretBluePrint _turretToBuild;
-    public GameObject BuildEffect;
+
+
     
     #region ChooseTurret
     // Prefab objeyi buradan yakalıyoruz.
@@ -40,11 +48,30 @@ public class BuildManager : MonoBehaviour
         PlayerStats.Money -= _turretToBuild.Cost;
         Debug.Log("Turret Build! Money Left : " + PlayerStats.Money);
     }
-    public bool CanBuild {get {return _turretToBuild !=null; }}
+    public bool CanBuild {get {return _turretToBuild !=null; }} // herhamgi bir turret seçilmişse
     public bool HasMoney {get {return PlayerStats.Money >= _turretToBuild.Cost; }}
 
     public void SelectTurretToBuild(TurretBluePrint turret) // istediğimiz turret objesini buraya ekliyeceğiz.
     {
         _turretToBuild = turret;
+        DeSelectNode(); // Naşka bir Turret tıklandığında gizle
+    }
+
+    public void SelectNode(Node node)
+    {
+        if (_selectedNode == node) // iki defa aynı node ' a tıklanmışsa da üstündeki upgrade gizlensin.
+        {
+            DeSelectNode();
+            return;
+        }
+        _selectedNode = node;
+        // NodeUI.transform.position = node.GetBuildPosition();
+        NodeUı.SetTarget(node); // Tüm Node'lere eklemek yerine referansı buradan ekliyoruz.
+    }
+
+    private void DeSelectNode()
+    {
+        _selectedNode = null;
+        NodeUı.Hide();  // Naşka bir işlem yapıldığında gizle
     }
 }

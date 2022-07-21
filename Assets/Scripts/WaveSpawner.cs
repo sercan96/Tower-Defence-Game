@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
     public Text WaveCountDownText;
     public float CountDown = 2;
     public float TimeBetweenWaves = 10;
-    public int WaveNumber = 1;
+    public int WaveNumber;
 
 
     void Update()
@@ -35,19 +35,22 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave(float waitTime)
     {
+        WaveNumber++;
+        PlayerStats.Rounds++;
         for (int i = 0; i < WaveNumber; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(waitTime); // Aynı anda oluşmamaları için.
         }
-        WaveNumber++;
+
     }
     
     void SpawnEnemy()
     {
         EnemyMat.color = Random.ColorHSV(0, 1, 0.5f, 1, 1, 1) + Color.gray;
         Instantiate(EnemyPrefab,EnemyPos.position,EnemyPos.rotation,EnemySpawnerParentObj);
-        PlayerStats.Lives++;
+        PlayerStats.IncreaseLıves();
+            
     }
-    
+
 }

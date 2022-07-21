@@ -12,6 +12,7 @@ public class CameraManager : MonoBehaviour
     public float MaxY =80f;
     void Update()
     {
+        if(GameManager.GameIsOver) return;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             _doMovement = !_doMovement;

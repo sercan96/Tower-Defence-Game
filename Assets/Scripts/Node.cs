@@ -16,6 +16,7 @@ public class Node : MonoBehaviour
     private Color _startColor;
     public Vector3 PositionOffset;
     private BuildManager _buildManager;
+    public NodeUI NodeUı;
 
     void Start()
     {
@@ -33,6 +34,9 @@ public class Node : MonoBehaviour
         if (!_buildManager.CanBuild) return; // Boşsa
         if (Turret != null) // içinde obje varsa aynı yere bir tane daha eklenmesin.
         {
+            _buildManager.SelectNode(this);
+            // NodeUı.SetTarget(this); // Tüm Node lere bu referansı vermek zahmetli iştir.
+            
             Debug.Log("Cant build there");
             return;
         }
@@ -43,7 +47,7 @@ public class Node : MonoBehaviour
     }
     void OnMouseEnter() // Mouse ile üzerine gelindiğinde
     {
-        if (!_buildManager.CanBuild) return; // Renginide değiştiremesin
+        if (!_buildManager.CanBuild) return; // Renginide değiştiremesin. Turret seçilmedi
         if (_buildManager.HasMoney)
             _rend.material.color = HoverColor;
         else

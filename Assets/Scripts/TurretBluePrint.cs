@@ -7,4 +7,6 @@ public class TurretBluePrint  // Turretlerin özellikleri buraya eklenecek.
 {
     public GameObject Prefab;
     public int Cost;
+
+
 }

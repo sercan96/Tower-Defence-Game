@@ -6,12 +6,22 @@ public class PlayerStats : MonoBehaviour
 {
     public static int Money;
     public int StartMoney = 600;
+    
     public static int Lives;
-    public int StartLives = 0;
+    public int StartLives = 1;
+    
+    public static int Rounds;
+    public int StartRounds = 0;
 
     void Start()
     {
-        Money = StartMoney; // Dk.17.33 Video 11
+        Money = StartMoney; // Static oldukları için sahne yenilemesinde eski tuttkları değerleri sıfırladık.
         Lives = StartLives;
+        Rounds = StartRounds;
+    }
+    
+    public static void IncreaseLıves()
+    {
+        Lives++;
     }
 }
