@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
     // public GameObject PurchaseMissileLouncher;
     
     public GameObject BuildEffect;
+    public GameObject SellEffect;
     public NodeUI NodeUı;
     private Node _selectedNode;
 
@@ -24,9 +25,7 @@ public class BuildManager : MonoBehaviour
         }
         Instance = this;
     }
-
-
-
+    
     
     #region ChooseTurret
     // Prefab objeyi buradan yakalıyoruz.
@@ -36,25 +35,19 @@ public class BuildManager : MonoBehaviour
     // {
     //     return _turretToBuild; 
     // }
-    public void BuildTurretOn(Node node)
-    {
-        if (PlayerStats.Money < _turretToBuild.Cost) return;
-        
-        GameObject turret = (GameObject)Instantiate(_turretToBuild.Prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.Turret = turret;
-        GameObject buildEffect = Instantiate(BuildEffect, node.GetBuildPosition(),BuildEffect.transform.rotation);
-        Destroy(buildEffect,5f);
-        
-        PlayerStats.Money -= _turretToBuild.Cost;
-        Debug.Log("Turret Build! Money Left : " + PlayerStats.Money);
-    }
+
     public bool CanBuild {get {return _turretToBuild !=null; }} // herhamgi bir turret seçilmişse
     public bool HasMoney {get {return PlayerStats.Money >= _turretToBuild.Cost; }}
 
     public void SelectTurretToBuild(TurretBluePrint turret) // istediğimiz turret objesini buraya ekliyeceğiz.
     {
-        _turretToBuild = turret;
+        _turretToBuild = turret; // Aldığımız turret objesini bu scriptin referansına kaydediyoruz.
         DeSelectNode(); // Naşka bir Turret tıklandığında gizle
+    }
+
+    public TurretBluePrint GetTurretToBuild() // Yakaladığı objeyi döndürür.
+    {
+        return _turretToBuild;
     }
 
     public void SelectNode(Node node)
@@ -69,7 +62,7 @@ public class BuildManager : MonoBehaviour
         NodeUı.SetTarget(node); // Tüm Node'lere eklemek yerine referansı buradan ekliyoruz.
     }
 
-    private void DeSelectNode()
+    public void DeSelectNode()
     {
         _selectedNode = null;
         NodeUı.Hide();  // Naşka bir işlem yapıldığında gizle

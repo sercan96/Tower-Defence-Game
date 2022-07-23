@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        Money = StartMoney; // Static oldukları için sahne yenilemesinde eski tuttkları değerleri sıfırladık.
+        Money = StartMoney; // Static oldukları için sahne yenilemesinde eski tuttukları değerleri almasını engelledik.
         Lives = StartLives;
         Rounds = StartRounds;
     }

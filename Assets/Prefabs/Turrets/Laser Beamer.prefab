@@ -272,16 +272,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 20
   BulletPrefab: {fileID: 0}
+  FirePoint: {fileID: 9002781358182928977}
   FireRate: 1
   PartToRotate: {fileID: 5962551927645504644}
   EnemyTag: Enemy
-  DamageOverTime: 100
+  DamageOverTime: 50
   UseLaser: 1
   SlowPct: 0.5
   LaserEffect: {fileID: 1128251440095776432}
   LineRenderer: {fileID: 5781631711154189415}
   LightImpact: {fileID: 639880935866924438}
-  FirePoint: {fileID: 9002781358182928977}
 --- !u!120 &5781631711154189415
 LineRenderer:
   m_ObjectHideFlags: 0
