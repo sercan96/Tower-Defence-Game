@@ -10,16 +10,18 @@ public class Enemy : MonoBehaviour
     public float StartSpeed = 10;
     [HideInInspector] public float speed;
     public float Health = 100;
+    private float _startHealth;
     public int Value = 50;
 
     void Start()
     {
         speed = StartSpeed;
+        _startHealth = Health;
     }
     public void TakeDamage(float amount)
     {
         Health -= amount;
-        BarImage.fillAmount -= amount / 100f; 
+        BarImage.fillAmount = Health / _startHealth;  
         if (Health <= 0)
         {
             Die();
@@ -35,7 +37,14 @@ public class Enemy : MonoBehaviour
     {
         PlayerStats.Money += Value;
         PlayerStats.Lives--;
+        #region Statik Tanımlama
+        //Direk scriptin içindeki değeri azalttık.
+        //Bu scripte bağlı olan obje prefab olduğu için Wave Spawner'ın referansını yakalayamayız.
+        //O sebeple static olarak yakaladık. Yani o değeri scripte sabitledik. Örneği aşlınmış olsa bile hepsinde değer değişecektir.
+        #endregion
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
+       
     }
     
 }
