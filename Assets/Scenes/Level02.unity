@@ -11752,7 +11752,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 3.19
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -11808,13 +11808,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: -0.4285878, y: 0.4974538, z: -0.5212813, w: -0.5450854}
-  m_LocalPosition: {x: 82.7, y: 44.1, z: -11.5}
+  m_LocalRotation: {x: -0.47474837, y: 0.6254118, z: -0.4690243, w: -0.40433934}
+  m_LocalPosition: {x: 85.24, y: 44.1, z: -11.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 80.354004, y: -394.736, z: -662.145}
+  m_LocalEulerAnglesHint: {x: 76.069, y: -525.466, z: -783.011}
 --- !u!1 &710904913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1119053259627033183, guid: f52e98225a8d4ef46ab68f4c5c16258b,
@@ -18890,7 +18890,7 @@ MonoBehaviour:
   WaveCountDownText: {fileID: 601376695}
   CountDown: 2
   TimeBetweenWaves: 5.5
-  WaveNumber: 0
+  WaveIndex: 0
 --- !u!4 &1237110335
 Transform:
   m_ObjectHideFlags: 0
@@ -18935,7 +18935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartMoney: 1000
-  StartLives: 0
+  StartLives: 10
   StartRounds: 0
 --- !u!114 &1237110338
 MonoBehaviour:
