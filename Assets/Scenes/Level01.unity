@@ -7654,26 +7654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dbab6e4081724409971a7fec75c8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StandardTurret:
-    Prefab: {fileID: 8613195103182996190, guid: 9cf08395b06e21543ba8f8289581f86d,
-      type: 3}
-    Cost: 100
-    UpgradePrefab: {fileID: 3582928386546687683, guid: d194520650ebfb14f9168ea9ca41e0e3,
-      type: 3}
-    UpgradeCost: 60
-  MissileLauncher:
-    Prefab: {fileID: 467091224135167941, guid: ea3bef886e8298648bab1f1183cacf55, type: 3}
-    Cost: 250
-    UpgradePrefab: {fileID: 7191340502803664237, guid: 0067eec5539d676498fe0a3f800fca11,
-      type: 3}
-    UpgradeCost: 100
-  LaserBeamer:
-    Prefab: {fileID: 6662219360220794711, guid: b330d60bd928a7c4bbe34ff5b6bccac3,
-      type: 3}
-    Cost: 350
-    UpgradePrefab: {fileID: 8942550247385223692, guid: 3b765c887d48b494ebcbc43fb6985733,
-      type: 3}
-    UpgradeCost: 150
+  StandardTurret: {fileID: 11400000, guid: 3f66e57fa02efa24d8cf1c1a6d1b3bb4, type: 2}
+  MissileLauncher: {fileID: 11400000, guid: 1179f9bfbf4da1646b782d838ef32866, type: 2}
+  LaserBeamer: {fileID: 11400000, guid: 482ada0657ff8d7419a4ac1eaa150582, type: 2}
 --- !u!1001 &494111079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18868,21 +18851,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Waves:
-  - Enemy: {fileID: 3160924892532659535, guid: c03064d3ee1194b4ba3eda509490a66d, type: 3}
-    Count: 2
-    Rate: 2
-  - Enemy: {fileID: 3160924892532659535, guid: c03064d3ee1194b4ba3eda509490a66d, type: 3}
-    Count: 5
-    Rate: 1
-  - Enemy: {fileID: 3160924892532659535, guid: dfa8baf1f29b41e43906bb4eb2fcae3e, type: 3}
-    Count: 3
-    Rate: 2
-  - Enemy: {fileID: 3160924892532659535, guid: dfa8baf1f29b41e43906bb4eb2fcae3e, type: 3}
-    Count: 5
-    Rate: 1
-  - Enemy: {fileID: 3160924892532659535, guid: 1f0a7f87423b8e947b1da1f8f0bb8ac8, type: 3}
-    Count: 4
-    Rate: 1
+  - {fileID: 11400000, guid: 7ccda28d8f61d5a4b84feeec70b40002, type: 2}
+  - {fileID: 11400000, guid: 7ccda28d8f61d5a4b84feeec70b40002, type: 2}
+  - {fileID: 11400000, guid: e5272c60153a5aa4a8f563c540216d58, type: 2}
+  - {fileID: 11400000, guid: bd2442f7e316564498bbca5a86661eb0, type: 2}
+  - {fileID: 11400000, guid: 03bfd6f29fdea8543a82acfb2734eebf, type: 2}
   EnemyPrefab: {fileID: 3160924892532659540, guid: c03064d3ee1194b4ba3eda509490a66d,
     type: 3}
   EnemyPos: {fileID: 955223357}

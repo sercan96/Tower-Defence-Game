@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb038176b1120c94e963bbe4996edb3e, type: 3}
+  m_Name: Fast1
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 3160924892532659535, guid: 1f0a7f87423b8e947b1da1f8f0bb8ac8, type: 3}
+  Count: 3
+  Rate: 1

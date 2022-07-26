@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class TurretBluePrint                        // Turretlerin özellikleri buraya eklenecek.
+// [System.Serializable]
+[CreateAssetMenu(fileName = "new Turret",menuName = "Turret")]
+public class TurretBluePrint : ScriptableObject                       // Turretlerin özellikleri buraya eklenecek.
 {
     public GameObject Prefab;
     public int Cost;

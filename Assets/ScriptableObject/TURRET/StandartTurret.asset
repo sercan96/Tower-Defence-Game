@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4539d83d4c0ec743a988143fae4b2d9, type: 3}
+  m_Name: StandartTurret
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 8613195103182996190, guid: 9cf08395b06e21543ba8f8289581f86d, type: 3}
+  Cost: 50
+  UpgradePrefab: {fileID: 3582928386546687683, guid: d194520650ebfb14f9168ea9ca41e0e3,
+    type: 3}
+  UpgradeCost: 60
